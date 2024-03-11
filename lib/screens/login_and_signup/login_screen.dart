@@ -8,7 +8,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:ofisense/background_widget.dart';
-import 'package:ofisense/screens/signin_screen.dart';
+import 'package:ofisense/screens/login_and_signup/signin_screen.dart';
 
 class Login_Screen extends StatefulWidget {
   const Login_Screen({super.key});

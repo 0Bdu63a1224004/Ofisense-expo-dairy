@@ -94,7 +94,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               padding: EdgeInsets.symmetric(horizontal: 30,),
               child: Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),
                 image: DecorationImage(fit: BoxFit.cover,
-                image: AssetImage("assets/app.png"))),
+                image: AssetImage("assets/appleB.png"))),
                 width: double.infinity,
                 height: 165,
                
@@ -117,6 +117,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             row_8(),
             row_9(),
             row_10(),
+            SizedBox(height: 60,)
           ],
         ),
       ),
@@ -132,22 +133,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
         decoration: BoxDecoration(
             color: Color.fromARGB(255, 231, 120, 17),
             borderRadius: BorderRadius.circular(30)),
-        child: Center(
-          child: Row(
-            children: [
-              SizedBox(
-                width: 124,
-              ),
-              Icon(
-                Icons.edit,
-                color: Colors.white,
-              ),
-              Text(
-                "Edit",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-            ],
-          ),
+        child: Row(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+           
+            Icon(
+              Icons.edit,
+              color: Colors.white,
+            ),
+            Text(
+              "Edit",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ],
         ),
       ),
     );
@@ -274,7 +271,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           ),
                           Text(
                             "In finace, a loan is the tranfer of money by one party to another with an agreement to pay it back",
-                            style: TextStyle(
+                           textAlign: TextAlign.justify, style: TextStyle(
                                 color: Color.fromARGB(255, 70, 70, 70),
                                 fontSize: 12),
                           ),

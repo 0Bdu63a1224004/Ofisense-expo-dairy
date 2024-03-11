@@ -13,8 +13,8 @@ class _ProfilePageState extends State<ProfilePage> {
   List detailsVal = [
     {"name": "Home", "icon": Icons.home},
     {"name": "Edit Profile", "icon": Icons.edit_square},
-    {"name": "Home", "Add Expo Name": Icons.add_circle_sharp},
-    {"name": "Home", "Log Out": Icons.logout_outlined}
+    {"name": "Add Expo Name", "icon": Icons.add_circle_sharp},
+    {"name": "Log Out", "icon": Icons.logout_outlined}
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 "My Profile",
                 style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: Color.fromARGB(255, 123, 121, 122)),
               ),
             ),
@@ -61,6 +61,14 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
+                image: DecorationImage(
+                    colorFilter: ColorFilter.mode(
+                      Colors.white.withOpacity(
+                          0.35), // Adjust the opacity of the white color filter
+                      BlendMode.dstATop,
+                    ),
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/bg.png')),
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -71,12 +79,17 @@ class _ProfilePageState extends State<ProfilePage> {
                       blurRadius: 12,
                       spreadRadius: 2)
                 ]),
-            child: Stack(clipBehavior: Clip.none,
-              children: [Positioned(top: -37,left: Get.width*0.39,right: Get.width*0.39,
-              child: CircleAvatar(
-                  radius: Get.width*0.11,
-                  backgroundImage: AssetImage('assets/dProfile.png'),
-                )),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned(
+                    top: -37,
+                    left: Get.width * 0.39,
+                    right: Get.width * 0.39,
+                    child: CircleAvatar(
+                      radius: Get.width * 0.11,
+                      backgroundImage: AssetImage('assets/dProfile.png'),
+                    )),
                 Column(
                   children: [
                     SizedBox(
@@ -85,18 +98,19 @@ class _ProfilePageState extends State<ProfilePage> {
                     Text("Bharathraj.R",
                         style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             color: Color.fromARGB(255, 81, 79, 79))),
                     Text("demo@gmail.com",
                         style: TextStyle(
-                            fontSize: 15, color: Color.fromARGB(255, 81, 79, 79))),
+                            fontSize: 15,fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 81, 79, 79))),
                     SizedBox(
                       height: 50,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 25),
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: BoxDecoration(color: Colors.white,
                             border: Border.all(color: Colors.grey),
                             borderRadius: BorderRadius.circular(20)),
                         width: double.infinity,
@@ -109,77 +123,21 @@ class _ProfilePageState extends State<ProfilePage> {
                                       children: [
                                         Row(
                                           children: [
-                                            (index == 0)
-                                                ? Icon(
-                                                    Icons.home_rounded,
-                                                    size: 20,
-                                                  )
-                                                : (index == 1)
-                                                    ? Icon(
-                                                        Icons.edit_square,
-                                                        size: 20,
-                                                      )
-                                                    : (index == 2)
-                                                        ? Icon(
-                                                            Icons.add_circle_sharp,
-                                                            size: 20,
-                                                          )
-                                                        : Icon(
-                                                            Icons.logout_outlined,
-                                                            size: 20,
-                                                          ),
-                                            SizedBox(
-                                              width: 5,
+                                            Icon(
+                                              detailsVal[index]["icon"],
+                                              size: 22,color: Colors.black54,
                                             ),
-                                            (index == 0)
-                                                ? Text(
-                                                    "Home",
-                                                    style: TextStyle(
-                                                        fontSize: 21,
-                                                        color: Color.fromARGB(
-                                                            255, 103, 101, 101),
-                                                        fontWeight:
-                                                            FontWeight.w500),
-                                                  )
-                                                : (index == 1)
-                                                    ? Text(
-                                                        "Edit Profile",
-                                                        style: TextStyle(
-                                                            fontSize: 21,
-                                                            color: Color.fromARGB(
-                                                                255, 103, 101, 101),
-                                                            fontWeight:
-                                                                FontWeight.w500),
-                                                      )
-                                                    : (index == 2)
-                                                        ? Text(
-                                                            "Add Expo Name",
-                                                            style: TextStyle(
-                                                                fontSize: 21,
-                                                                color:
-                                                                    Color.fromARGB(
-                                                                        255,
-                                                                        103,
-                                                                        101,
-                                                                        101),
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500),
-                                                          )
-                                                        : Text(
-                                                            "Log Out",
-                                                            style: TextStyle(
-                                                                fontSize: 21,
-                                                                color:
-                                                                    Color.fromARGB(
-                                                                        255,
-                                                                        103,
-                                                                        101,
-                                                                        101),
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500),
-                                                          )
+                                            SizedBox(
+                                              width: 15,
+                                            ),
+                                            Text(
+                                              detailsVal[index]["name"],
+                                              style: TextStyle(
+                                                  fontSize: 21,
+                                                  color: Color.fromARGB(
+                                                      255, 103, 101, 101),
+                                                  fontWeight: FontWeight.w500),
+                                            )
                                           ],
                                         ),
                                         SizedBox(
