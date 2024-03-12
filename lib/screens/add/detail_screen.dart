@@ -26,26 +26,19 @@ class _DetailsScreenState extends State<DetailsScreen> {
               height: 30,
             ),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          
               children: [
-                SizedBox(
-                  width: 15,
-                ),
+               SizedBox(width: 20,),
                 Container(
                   height: 55,
-                  width: 170,
-                  child: Image.asset(
-                    "assets/logo.png",
-                    fit: BoxFit.fill,
-                  ),
+                  width: 170,decoration: BoxDecoration(image: DecorationImage(image: AssetImage( "assets/logo.png"))),
+                  
                 ),
-                SizedBox(
-                  width: 117,
-                ),
+              Spacer(),
                 CircleAvatar(
                   radius: 30,
                   backgroundImage: AssetImage('assets/dProfile.png'),
-                )
+                ),SizedBox(width: 20,)
               ],
             ),
             SizedBox(

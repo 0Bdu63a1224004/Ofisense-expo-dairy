@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
+import 'package:ofisense/screens/home/reg_screen.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -119,32 +120,36 @@ class _ProfilePageState extends State<ProfilePage> {
                           child: Column(
                             children: List.generate(
                                 4,
-                                (index) => Column(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              detailsVal[index]["icon"],
-                                              size: 22,color: Colors.black54,
-                                            ),
-                                            SizedBox(
-                                              width: 15,
-                                            ),
-                                            Text(
-                                              detailsVal[index]["name"],
-                                              style: TextStyle(
-                                                  fontSize: 21,
-                                                  color: Color.fromARGB(
-                                                      255, 103, 101, 101),
-                                                  fontWeight: FontWeight.w500),
-                                            )
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 15,
-                                        )
-                                      ],
-                                    )),
+                                (index) => InkWell(onTap: () {
+                                  Get.to(()=>Reg_Screen());
+                                },
+                                  child: Column(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                detailsVal[index]["icon"],
+                                                size: 22,color: Colors.black54,
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              Text(
+                                                detailsVal[index]["name"],
+                                                style: TextStyle(
+                                                    fontSize: 21,
+                                                    color: Color.fromARGB(
+                                                        255, 103, 101, 101),
+                                                    fontWeight: FontWeight.w500),
+                                              )
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 15,
+                                          )
+                                        ],
+                                      ),
+                                )),
                           ),
                         ),
                       ),
