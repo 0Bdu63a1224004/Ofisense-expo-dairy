@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
-import 'package:ofisense/screens/home/reg_screen.dart';
+import 'package:ofisense/controller/bottombar_controller.dart';
+import 'package:ofisense/screens/add/reg_screen.dart';
+import 'package:ofisense/screens/login_and_signup/expo_next.dart';
+import 'package:ofisense/screens/login_and_signup/login_screen.dart';
+import 'package:ofisense/screens/login_and_signup/signin_screen.dart';
 import 'package:ofisense/screens/profile/update_profile.dart';
 import 'package:ofisense/screens/profile/upload_screen.dart';
 
@@ -13,6 +18,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final bottomBarController = Get.put(BottomBarController());
   List detailsVal = [
     {"name": "Home", "icon": Icons.home},
     {"name": "Edit Profile", "icon": Icons.edit_square},
@@ -126,11 +132,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                 4,
                                 (index) => InkWell(
                                       onTap: () {
-                                        Get.to(() => (index == 0)
-                                            ?  Upload_Screen()
-                                            : (index == 1)
-                                                ?  Upload_Screen()
-                                                : Upload_Screen());
+                                        if (index == 0) {
+                                          bottomBarController
+                                              .bottomBarIndex.value = 0;
+                                        } else if (index == 1) {
+                                          Get.to(() => Update_Profile());
+                                        } else if (index == 2) {
+                                          Get.to(() => Expo_Next());
+                                        } else {
+                                          Get.to(() => Signin_Screen());
+                                        }
                                       },
                                       child: Column(
                                         children: [

@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/route_manager.dart';
+import 'package:ofisense/controller/bottombar_controller.dart';
 import 'package:ofisense/screens/home/search_screen.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:ofisense/widget/dummy_bottombar_widget.dart';
 
 class Upload_Screen extends StatefulWidget {
   const Upload_Screen({super.key});
@@ -16,305 +20,438 @@ class _Upload_ScreenState extends State<Upload_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: Get.width * .1,
-              ),
-              Row(
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: Get.width * .1,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: Get.width * .05,
+                ),
+                Container(
+                  height: 55,
+                  width: 170,
+                  child: Image.asset(
+                    "assets/logo.png",
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                SizedBox(
+                  width: Get.width * .31,
+                ),
+                Column(
+                  children: [
+                    SizedBox(
+                      height: Get.width * .03,
+                    ),
+                    Container(
+                      width: 47,
+                      height: 47,
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/dProfile.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: Get.width * .06,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: Get.width * .078),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: Get.width * .05,
+                  Text(
+                    "Expo Name :",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
                   ),
+                  SizedBox(height: Get.width * .012),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "Bharath",
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 148, 146, 147)),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: Get.width * .045,
+                            vertical: Get.width * .015)),
+                  ),
+                  SizedBox(height: Get.width * .045),
+                  Text(
+                    "Company Name :",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  ),
+                  SizedBox(height: Get.width * .012),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "Bharath",
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 153, 149, 150)),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: Get.width * .045,
+                            vertical: Get.width * .015)),
+                  ),
+                  SizedBox(height: Get.width * .045),
+                  Text(
+                    "Business Card :",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  ),
+                  SizedBox(height: Get.width * .025),
+                  // Container(
+                  //   width: double.infinity,
+                  //   height: Get.width * .37,
+                  //   decoration: BoxDecoration(
+                  //       image: DecorationImage(
+                  //           image: AssetImage("assets/bod.png"))),
+                  // ),
                   Container(
-                    height: 55,
-                    width: 170,
-                    child: Image.asset(
-                      "assets/logo.png",
-                      fit: BoxFit.fill,
+        margin: EdgeInsets.symmetric( vertical: 5),
+        child: DottedBorder(
+          dashPattern: [4, 2], // Adjust dash pattern as needed
+          color: Colors.blue,
+          strokeWidth: 1,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+             
+              Container(
+                height: 140,
+                width: double.infinity,
+                decoration:
+                    BoxDecoration(color: Color(0xFF0085FF).withOpacity(0.2), image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/bod.png"))),
+                
+              ),
+               Positioned(
+                child: DottedBorder(
+                  borderType: BorderType.Circle,
+                  padding: EdgeInsets.all(2),
+                  dashPattern: [4, 2], // Adjust dash pattern as needed
+                  color: Colors.blue,
+                  strokeWidth: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.edit_square,
+                        size: 16,
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    width: Get.width * .31,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: Get.width * .03,
-                      ),
-                      Container(
-                        width: 47,
-                        height: 47,
-                        decoration: BoxDecoration(shape: BoxShape.circle),
-                        child: ClipOval(
-                          child: Image.asset(
-                            'assets/prof.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(
-                height: Get.width * .06,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: Get.width * .078),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Expo Name :",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .012),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: "Bharath",
-                          hintStyle: TextStyle(color: Color(0xFF827D7E)),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: Get.width * .045,
-                              vertical: Get.width * .015)),
-                    ),
-                    SizedBox(height: Get.width * .045),
-                    Text(
-                      "Company Name :",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .012),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: "Bharath",
-                          hintStyle: TextStyle(color: Color(0xFF827D7E)),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: Get.width * .045,
-                              vertical: Get.width * .015)),
-                    ),
-                    SizedBox(height: Get.width * .045),
-                    Text(
-                      "Business Card :",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .025),
-                    Container(
-                      width: double.infinity,
-                      height: Get.width * .37,
-                      decoration: BoxDecoration(border: Border.all()),
-                      child: Image.asset(
-                        "assets/bod.png",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    SizedBox(height: Get.width * .02),
-                    Container(
-                      width: double.infinity,
-                      height: Get.width * .37,
-                      decoration: BoxDecoration(border: Border.all()),
-                      child: Image.asset(
-                        "assets/bod.png",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    SizedBox(height: Get.width * .02),
-                   DottedBorder(
-                        radius: Radius.circular(5),
-                        borderType: BorderType.RRect,
-                        dashPattern: [4, 2], // Adjust dash pattern as needed
-                        color: Colors.blue,
-                        strokeWidth: 1,
-                        child: Container(
-                          child: Center(
-                            child: Padding(
-                              padding: EdgeInsets.all(Get.width * .019),
-                              child: Image.asset(
-                                "assets/plusRounded.png",
-                              ),
-                            ),
-                          ),
-                          width: double.infinity,
-                          height: Get.width * .12,
-                          decoration: BoxDecoration(
-                              color: Color(0xFF0085FF).withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(8)),
-                        ),
-                      ),
-                    SizedBox(height: Get.width * .02),
-                    Text(
-                      "Hall No :",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .012),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: "14552",
-                          hintStyle: TextStyle(color: Color(0xFF827D7E)),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: Get.width * .045,
-                              vertical: Get.width * .015)),
-                    ),
-                    SizedBox(height: Get.width * .05),
-                    Text(
-                      "Booth No :",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .012),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: "25881",
-                          hintStyle: TextStyle(color: Color(0xFF827D7E)),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: Get.width * .045,
-                              vertical: Get.width * .015)),
-                    ),
-                    SizedBox(height: Get.width * .03),
-                    Text(
-                      "Booth Image :",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .025),
-                    Container(
-                      width: double.infinity,
-                      height: Get.width * .37,
-                      decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Image.asset(
-                        "assets/app.png",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    SizedBox(height: Get.width * .02),
-                    Container(
-                      width: double.infinity,
-                      height: Get.width * .37,
-                      decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Image.asset(
-                        "assets/app.png",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    SizedBox(height: Get.width * .02),
-                   DottedBorder(
-                        radius: Radius.circular(5),
-                        borderType: BorderType.RRect,
-                        dashPattern: [4, 2], // Adjust dash pattern as needed
-                        color: Colors.blue,
-                        strokeWidth: 1,
-                        child: Container(
-                          child: Center(
-                            child: Padding(
-                              padding: EdgeInsets.all(Get.width * .019),
-                              child: Image.asset(
-                                "assets/plusRounded.png",
-                              ),
-                            ),
-                          ),
-                          width: double.infinity,
-                          height: Get.width * .12,
-                          decoration: BoxDecoration(
-                              color: Color(0xFF0085FF).withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(8)),
-                        ),
-                      ),
-                    SizedBox(height: Get.width * .07),
-                    Text(
-                      "Product Image :",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .02),
-                    product_1(),
-                    SizedBox(height: Get.width * .04),
-                    product_2(),
-                    SizedBox(height: Get.width * .04),
-                    DottedBorder(
-                        radius: Radius.circular(5),
-                        borderType: BorderType.RRect,
-                        dashPattern: [4, 2], // Adjust dash pattern as needed
-                        color: Colors.blue,
-                        strokeWidth: 1,
-                        child: Container(
-                          child: Center(
-                            child: Padding(
-                              padding: EdgeInsets.all(Get.width * .019),
-                              child: Image.asset(
-                                "assets/plusRounded.png",
-                              ),
-                            ),
-                          ),
-                          width: double.infinity,
-                          height: Get.width * .12,
-                          decoration: BoxDecoration(
-                              color: Color(0xFF0085FF).withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(8)),
-                        ),
-                      ),
-                    SizedBox(height: Get.width * .03),
-                    Text(
-                      "Remark",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                    ),
-                    SizedBox(height: Get.width * .012),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: Get.width * .045,
-                              vertical: Get.width * .015)),
-                    ),
-                    SizedBox(height: Get.width * .06),
-                    Container(
-                      width: double.infinity,
-                      height: Get.width * .13,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFE77811),
-                          borderRadius: BorderRadius.circular(35),
-                          boxShadow: [
-                            BoxShadow(
-                                spreadRadius: 0.02,
-                                blurRadius: 5,
-                                color: Color.fromARGB(255, 204, 203, 203),
-                                offset: Offset(0, 5))
-                          ]),
-                      child: Center(
-                          child: InkWell(onTap: () {
-                            Get.to(() => SearchScreen());
-                          },
-                            child: Text(
-                                                    "Update",
-                                                    style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontWeight: FontWeight.w500,
-                              fontSize: Get.width * .05),
-                                                  ),
-                          )),
-                    ),
-                    SizedBox(height: Get.width * .2)
-                  ],
                 ),
+                top: -8,
+                right: -8,
               ),
             ],
           ),
         ),
       ),
+
+      Container(
+        margin: EdgeInsets.symmetric( vertical: 5),
+        child: DottedBorder(
+          dashPattern: [4, 2], // Adjust dash pattern as needed
+          color: Colors.blue,
+          strokeWidth: 1,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+             
+              Container(
+                height: 140,
+                width: double.infinity,
+                decoration:
+                    BoxDecoration(color: Color(0xFF0085FF).withOpacity(0.2), image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/bod.png"))),
+                
+              ),
+               Positioned(
+                child: DottedBorder(
+                  borderType: BorderType.Circle,
+                  padding: EdgeInsets.all(2),
+                  dashPattern: [4, 2], // Adjust dash pattern as needed
+                  color: Colors.blue,
+                  strokeWidth: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.edit_square,
+                        size: 16,
+                      ),
+                    ),
+                  ),
+                ),
+                top: -8,
+                right: -8,
+              ),
+            ],
+          ),
+        ),
+      ),
+                 
+                  SizedBox(height: Get.width * .02),
+                  DottedBorder(
+                    radius: Radius.circular(5),
+                    borderType: BorderType.RRect,
+                    dashPattern: [4, 2], // Adjust dash pattern as needed
+                    color: Colors.blue,
+                    strokeWidth: 1,
+                    child: Container(
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(Get.width * .019),
+                          child: Image.asset(
+                            "assets/plusRounded.png",
+                          ),
+                        ),
+                      ),
+                      width: double.infinity,
+                      height: Get.width * .12,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF0085FF).withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                  ),
+                  SizedBox(height: Get.width * .02),
+                  Text(
+                    "Hall No :",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  ),
+                  SizedBox(height: Get.width * .012),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "14552",
+                        hintStyle: TextStyle(color: Color(0xFF827D7E)),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: Get.width * .045,
+                            vertical: Get.width * .015)),
+                  ),
+                  SizedBox(height: Get.width * .05),
+                  Text(
+                    "Booth No :",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  ),
+                  SizedBox(height: Get.width * .012),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "25881",
+                        hintStyle: TextStyle(color: Color(0xFF827D7E)),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: Get.width * .045,
+                            vertical: Get.width * .015)),
+                  ),
+                  SizedBox(height: Get.width * .03),
+                  Text(
+                    "Booth Image :",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  ),
+                  SizedBox(height: Get.width * .025),
+                Stack(clipBehavior: Clip.none,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: Get.width * .37,
+                        decoration: BoxDecoration(
+                         image: DecorationImage(image: AssetImage("assets/app.png"),fit: BoxFit.cover),
+                            borderRadius: BorderRadius.circular(5)),
+                        
+                      ),
+                      Positioned(
+                child: DottedBorder(
+                  borderType: BorderType.Circle,
+                  padding: EdgeInsets.all(2),
+                  dashPattern: [4, 2], // Adjust dash pattern as needed
+                  color: Colors.blue,
+                  strokeWidth: 1,
+                  child: CircleAvatar(backgroundColor: Colors.white,
+                  
+                     radius: 15,
+                   
+                      child: InkWell(
+                        onTap: () {},
+                        child: Icon(
+                          Icons.edit_square,
+                          size: 18,color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ),
+                
+                top: -8,
+                right: -8,
+              ),
+                    ],
+                  ),
+                  SizedBox(height: Get.width * .02),
+                  Stack(clipBehavior: Clip.none,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: Get.width * .37,
+                        decoration: BoxDecoration(
+                         image: DecorationImage(image: AssetImage("assets/app.png"),fit: BoxFit.cover),
+                            borderRadius: BorderRadius.circular(5)),
+                     
+                      ),
+                      Positioned(
+                child: DottedBorder(
+                  borderType: BorderType.Circle,
+                  padding: EdgeInsets.all(2),
+                  dashPattern: [4, 2], // Adjust dash pattern as needed
+                  color: Colors.blue,
+                  strokeWidth: 1,
+                  child: CircleAvatar(backgroundColor: Colors.white,
+                  
+                     radius: 15,
+                   
+                      child: InkWell(
+                        onTap: () {},
+                        child: Icon(
+                          Icons.edit_square,
+                          size: 18,color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ),
+                
+                top: -8,
+                right: -8,
+              ),
+                    ],
+                  ),
+                  SizedBox(height: Get.width * .02),
+                  DottedBorder(
+                    radius: Radius.circular(5),
+                    borderType: BorderType.RRect,
+                    dashPattern: [4, 2], // Adjust dash pattern as needed
+                    color: Colors.blue,
+                    strokeWidth: 1,
+                    child: Container(
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(Get.width * .019),
+                          child: Image.asset(
+                            "assets/plusRounded.png",
+                          ),
+                        ),
+                      ),
+                      width: double.infinity,
+                      height: Get.width * .12,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF0085FF).withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                  ),
+                  SizedBox(height: Get.width * .07),
+                  Text(
+                    "Product Image :",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  ),
+                  SizedBox(height: Get.width * .02),
+                  product_1(),
+                  SizedBox(height: Get.width * .04),
+                  product_2(),
+                  SizedBox(height: Get.width * .04),
+                  DottedBorder(
+                    radius: Radius.circular(5),
+                    borderType: BorderType.RRect,
+                    dashPattern: [4, 2], // Adjust dash pattern as needed
+                    color: Colors.blue,
+                    strokeWidth: 1,
+                    child: Container(
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(Get.width * .019),
+                          child: Image.asset(
+                            "assets/plusRounded.png",
+                          ),
+                        ),
+                      ),
+                      width: double.infinity,
+                      height: Get.width * .12,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF0085FF).withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                  ),
+                  SizedBox(height: Get.width * .03),
+                  Text(
+                    "Remark",
+                    style: TextStyle(
+                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  ),
+                  SizedBox(height: Get.width * .012),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: Get.width * .045,
+                            vertical: Get.width * .015)),
+                  ),
+                  SizedBox(height: Get.width * .06),
+                  Container(
+                    width: double.infinity,
+                    height: Get.width * .13,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFE77811),
+                        borderRadius: BorderRadius.circular(35),
+                        boxShadow: [
+                          BoxShadow(
+                              spreadRadius: 0.02,
+                              blurRadius: 5,
+                              color: Color.fromARGB(255, 204, 203, 203),
+                              offset: Offset(0, 5))
+                        ]),
+                    child: Center(
+                        child: InkWell(
+                      onTap: () {
+                        Get.to(() => SearchScreen());
+                      },
+                      child: Text(
+                        "Update",
+                        style: TextStyle(
+                            color: Color(0xFFFFFFFF),
+                            fontWeight: FontWeight.w500,
+                            fontSize: Get.width * .05),
+                      ),
+                    )),
+                  ),
+                  SizedBox(height: Get.width * .2)
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: DummyBottomBar(),
     );
   }
 

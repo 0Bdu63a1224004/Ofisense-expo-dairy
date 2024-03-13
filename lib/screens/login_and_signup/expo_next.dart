@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/route_manager.dart';
-import 'package:ofisense/screens/home/reg_screen.dart';
+import 'package:ofisense/screens/add/reg_screen.dart';
 import 'package:ofisense/screens/profile/upload_screen.dart';
 
 class Expo_Next extends StatefulWidget {

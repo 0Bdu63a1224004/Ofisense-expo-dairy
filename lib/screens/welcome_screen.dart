@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/route_manager.dart';
+import 'package:ofisense/screens/home/home_screen.dart';
 import 'package:ofisense/screens/login_and_signup/expo_next.dart';
 
 class Wellcome_Screen extends StatefulWidget {
@@ -13,22 +14,29 @@ class Wellcome_Screen extends StatefulWidget {
 class _Wellcome_ScreenState extends State<Wellcome_Screen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container(
+    return Scaffold(
+      body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover, image: AssetImage('assets/bg.png'))),
           child: Center(
             child: InkWell(
               onTap: () {
-                Get.to(() => Expo_Next());
+                Get.to(() => HomeScreen());
               },
-              child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text("Welcome to",style: TextStyle(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Welcome to",
+                    style: TextStyle(
                         color: Color(0xFF827D7E),
                         fontWeight: FontWeight.w900,
-                        fontSize: Get.width * .075),),
+                        fontSize: Get.width * .075),
+                  ),
                   Container(
-                    width: Get.width * 1,height:  Get.width * 0.25,
+                    width: Get.width * 1,
+                    height: Get.width * 0.25,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.contain,
@@ -39,6 +47,7 @@ class _Wellcome_ScreenState extends State<Wellcome_Screen> {
                 ],
               ),
             ),
-          )),);
+          )),
+    );
   }
 }

@@ -24,9 +24,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: Get.width * .13,
-                ),
+                
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -405,7 +403,8 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                       )
                     ],
                   ),
-                )
+                ),
+                SizedBox(height: 70,)
               ],
             ),
           ),

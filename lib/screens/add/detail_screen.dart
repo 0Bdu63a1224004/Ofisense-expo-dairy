@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:ofisense/background_widget.dart';
-import 'package:ofisense/screens/home/reg_screen.dart';
+import 'package:ofisense/controller/bottombar_controller.dart';
+import 'package:ofisense/screens/add/reg_screen.dart';
+import 'package:ofisense/screens/home/home_screen.dart';
 import 'package:ofisense/screens/home/search_company_screen.dart';
 import 'package:ofisense/screens/profile/upload_screen.dart';
+import 'package:ofisense/widget/dummy_bottombar_widget.dart';
 
 class DetailsScreen extends StatefulWidget {
   const DetailsScreen({super.key});
@@ -13,9 +17,13 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  final bottomBarController = Get.put(BottomBarController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -91,7 +99,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                   Text("Booth Image :",
                       style: TextStyle(
-                          fontSize: 19, color: Color.fromARGB(255, 101, 98, 98))),
+                          fontSize: 19,
+                          color: Color.fromARGB(255, 101, 98, 98))),
                 ],
               ),
               SizedBox(
@@ -121,7 +130,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                   Text("Product image :",
                       style: TextStyle(
-                          fontSize: 19, color: Color.fromARGB(255, 101, 98, 98))),
+                          fontSize: 19,
+                          color: Color.fromARGB(255, 101, 98, 98))),
                 ],
               ),
               SizedBox(
@@ -138,6 +148,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: DummyBottomBar(),
     );
   }
 
@@ -157,9 +168,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
               Icons.edit,
               color: Colors.white,
             ),
-            InkWell(onTap: () {
-               Get.to(() => Upload_Screen());
-            },
+            InkWell(
+              onTap: () {
+                Get.to(() => Upload_Screen());
+              },
               child: Text(
                 "Edit",
                 style: TextStyle(color: Colors.white, fontSize: 20),
@@ -181,7 +193,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
             color: Color.fromARGB(255, 231, 120, 17),
             borderRadius: BorderRadius.circular(30)),
         child: Center(
-          child: InkWell(onTap:(){ Get.to(() => SearchCompanyScreen());},
+          child: InkWell(
+            onTap: () {
+              bottomBarController.bottomBarIndex.value = 0;
+              Get.to(HomeScreen());
+            },
             child: Text(
               "Done",
               style: TextStyle(

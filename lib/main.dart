@@ -5,7 +5,7 @@ import 'package:ofisense/screens/home/search_company_screen.dart';
 
 import 'package:ofisense/screens/home/search_screen.dart';
 
-import 'package:ofisense/screens/profile_screen.dart';
+
 import 'package:ofisense/saloman.dart';
 import 'package:ofisense/screens/splash_screen.dart';
 
