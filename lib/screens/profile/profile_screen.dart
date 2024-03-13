@@ -127,8 +127,10 @@ class _ProfilePageState extends State<ProfilePage> {
                                 (index) => InkWell(
                                       onTap: () {
                                         Get.to(() => (index == 0)
-                                            ? Reg_Screen()
-                                            :(index==1)? Update_Profile(): Upload_Screen());
+                                            ?  Upload_Screen()
+                                            : (index == 1)
+                                                ?  Upload_Screen()
+                                                : Upload_Screen());
                                       },
                                       child: Column(
                                         children: [

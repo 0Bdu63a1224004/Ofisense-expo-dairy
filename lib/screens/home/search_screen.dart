@@ -5,6 +5,7 @@ import 'package:get/route_manager.dart';
 import 'package:ofisense/controller/bottombar_controller.dart';
 import 'package:ofisense/screens/add/detail_screen.dart';
 import 'package:ofisense/screens/home/home_screen.dart';
+import 'package:ofisense/screens/home/update_screen.dart';
 import 'package:ofisense/screens/profile_screen.dart';
 import 'package:ofisense/saloman.dart';
 import 'package:ofisense/screens/home/search_company_screen.dart';
@@ -114,10 +115,13 @@ class _SearchScreenState extends State<SearchScreen> {
                         width: double.infinity,
                         decoration: BoxDecoration(
                             color: Color(0xFF0085FF).withOpacity(0.2)),
-                        child: Icon(
-                          Icons.add_circle_outline,
-                          color: Color.fromARGB(255, 215, 141, 45),
-                          size: 35,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Icon(
+                            Icons.add_circle_outline,
+                            color: Color.fromARGB(255, 215, 141, 45),
+                            size: 35,
+                          ),
                         ))))
           ])),
       bottomNavigationBar: Container(
@@ -142,7 +146,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   InkWell companyListWidget(int index) {
     return InkWell(
-      onTap: () {},
+      onTap: () { Get.to(() => Update_Screen());},
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
         child: DottedBorder(
@@ -161,9 +165,13 @@ class _SearchScreenState extends State<SearchScreen> {
                   strokeWidth: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(3.0),
-                    child: Icon(
-                      Icons.edit_square,
-                      size: 16,
+                    child: InkWell(onTap: () {
+                      
+                    },
+                      child: Icon(
+                        Icons.edit_square,
+                        size: 16,
+                      ),
                     ),
                   ),
                 ),

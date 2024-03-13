@@ -7,6 +7,9 @@ import 'package:get/state_manager.dart';
 import 'package:ofisense/background_widget.dart';
 import 'package:ofisense/main.dart';
 import 'package:ofisense/screens/home/home_screen.dart';
+import 'package:ofisense/screens/login_and_signup/change_password.dart';
+import 'package:ofisense/screens/login_and_signup/otp_screen.dart';
+import 'package:ofisense/screens/login_and_signup/register_now.dart';
 
 class Signin_Screen extends StatefulWidget {
   const Signin_Screen({super.key});
@@ -104,11 +107,15 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                         SizedBox(
                           width: Get.width * .15,
                         ),
-                        Text(
-                          "Forgot Password?",
-                          style: TextStyle(
-                              color: Color(0xFFE77811),
-                              fontSize: Get.width * .035),
+                        InkWell(onTap: () {
+                           Get.to(Change_Password());
+                        },
+                          child: Text(
+                            "Forgot Password?",
+                            style: TextStyle(
+                                color: Color(0xFFE77811),
+                                fontSize: Get.width * .035),
+                          ),
                         )
                       ],
                     ),
@@ -137,7 +144,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                           EdgeInsets.symmetric(horizontal: Get.width * .08),
                       child: InkWell(
                         onTap: () {
-                          Get.to(HomeScreen());
+                          Get.to(Otp_Screen());
                         },
                         child: Container(
                           width: double.infinity,
@@ -168,12 +175,16 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                                 color: Color(0xFF827D7E),
                                 fontWeight: FontWeight.w500,
                                 fontSize: Get.width * .04)),
-                        Text(
-                          "Register Now",
-                          style: TextStyle(
-                              color: Color(0xFFE77811),
-                              fontWeight: FontWeight.w500,
-                              fontSize: Get.width * .04),
+                        InkWell(onTap: () {
+                          Get.to(Register_Now());
+                        },
+                          child: Text(
+                            "Register Now",
+                            style: TextStyle(
+                                color: Color(0xFFE77811),
+                                fontWeight: FontWeight.w500,
+                                fontSize: Get.width * .04),
+                          ),
                         )
                       ],
                     )

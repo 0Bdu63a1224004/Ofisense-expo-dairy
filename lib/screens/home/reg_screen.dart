@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/route_manager.dart';
+import 'package:ofisense/screens/add/detail_screen.dart';
+import 'package:ofisense/screens/login_and_signup/select_next.dart';
 
 class Reg_Screen extends StatefulWidget {
   const Reg_Screen({super.key});
@@ -97,26 +99,28 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                       ),
                       busi_con(),
                       SizedBox(height: 8),
-                       DottedBorder(radius: Radius.circular(5),borderType: BorderType.RRect,
+                      DottedBorder(
+                        radius: Radius.circular(5),
+                        borderType: BorderType.RRect,
                         dashPattern: [4, 2], // Adjust dash pattern as needed
                         color: Colors.blue,
                         strokeWidth: 1,
-                        child:  Container(
-                        child: Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(Get.width * .019),
-                            child: Image.asset(
-                              "assets/plusRounded.png",
+                        child: Container(
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(Get.width * .019),
+                              child: Image.asset(
+                                "assets/plusRounded.png",
+                              ),
                             ),
                           ),
+                          width: double.infinity,
+                          height: Get.width * .12,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF0085FF).withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(8)),
                         ),
-                        width: double.infinity,
-                        height: Get.width * .12,
-                        decoration: BoxDecoration(
-                            color: Color(0xFF0085FF).withOpacity(0.2),
-                       
-                            borderRadius: BorderRadius.circular(8)),
-                      ),),
+                      ),
                       SizedBox(height: Get.width * .03),
                       Text(
                         "Hall No :",
@@ -160,26 +164,28 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                       ),
                       busi_con(),
                       SizedBox(height: Get.width * .012),
-                      DottedBorder(radius: Radius.circular(5),borderType: BorderType.RRect,
+                      DottedBorder(
+                        radius: Radius.circular(5),
+                        borderType: BorderType.RRect,
                         dashPattern: [4, 2], // Adjust dash pattern as needed
                         color: Colors.blue,
                         strokeWidth: 1,
-                        child:  Container(
-                        child: Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(Get.width * .019),
-                            child: Image.asset(
-                              "assets/plusRounded.png",
+                        child: Container(
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(Get.width * .019),
+                              child: Image.asset(
+                                "assets/plusRounded.png",
+                              ),
                             ),
                           ),
+                          width: double.infinity,
+                          height: Get.width * .12,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF0085FF).withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(8)),
                         ),
-                        width: double.infinity,
-                        height: Get.width * .12,
-                        decoration: BoxDecoration(
-                            color: Color(0xFF0085FF).withOpacity(0.2),
-                       
-                            borderRadius: BorderRadius.circular(8)),
-                      ),),
+                      ),
                       SizedBox(
                         height: Get.width * .05,
                       ),
@@ -216,12 +222,12 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                   height: Get.width * .06,
                                   decoration: BoxDecoration(
                                       border:
-                                          Border.all(color: Color(0xFF827D7E)),
+                                          Border.all(color: Color(0xFF827D7E).withOpacity(.51)),
                                       borderRadius: BorderRadius.circular(5)),
                                   child: Center(
                                     child: Text("Product Name",
                                         style: TextStyle(
-                                            color: Color(0xFF827D7E),
+                                            color: Color(0xFF827D7E).withOpacity(.60),
                                             fontSize: Get.width * .022)),
                                   ),
                                 ),
@@ -250,7 +256,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E)),
+                                                color: Color(0xFF827D7E).withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -272,7 +278,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E)),
+                                                color: Color(0xFF827D7E).withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -294,7 +300,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E)),
+                                                color: Color(0xFF827D7E).withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -316,7 +322,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E)),
+                                                color: Color(0xFF827D7E).withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -327,21 +333,27 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                         ),
                       ),
                       SizedBox(height: Get.width * .015),
-                      Container(
-                        child: Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(Get.width * .019),
-                            child: Image.asset(
-                              "assets/plus.png",
+                      DottedBorder(
+                        radius: Radius.circular(5),
+                        borderType: BorderType.RRect,
+                        dashPattern: [4, 2], // Adjust dash pattern as needed
+                        color: Colors.blue,
+                        strokeWidth: 1,
+                        child: Container(
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(Get.width * .019),
+                              child: Image.asset(
+                                "assets/plusRounded.png",
+                              ),
                             ),
                           ),
+                          width: double.infinity,
+                          height: Get.width * .12,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF0085FF).withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(8)),
                         ),
-                        width: double.infinity,
-                        height: Get.width * .12,
-                        decoration: BoxDecoration(
-                            color: Color(0xFF0085FF),
-                            border: Border.all(),
-                            borderRadius: BorderRadius.circular(8)),
                       ),
                       SizedBox(height: Get.width * .03),
                       Row(
@@ -375,14 +387,22 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                   offset: Offset(0, 5))
                             ]),
                         child: Center(
-                            child: Text(
-                          "Submit",
-                          style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontWeight: FontWeight.w500,
-                              fontSize: Get.width * .05),
+                            child: InkWell(
+                          onTap: () {
+                           Get.to(() => DetailsScreen());
+                          },
+                          child: Text(
+                            "Submit",
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontWeight: FontWeight.w500,
+                                fontSize: Get.width * .05),
+                          ),
                         )),
-                      ),SizedBox(height: Get.width*.1,)
+                      ),
+                      SizedBox(
+                        height: Get.width * .1,
+                      )
                     ],
                   ),
                 )
@@ -393,95 +413,102 @@ class _Reg_ScreenState extends State<Reg_Screen> {
       ),
     );
   }
- product_con() {
-    return 
-      
-      DottedBorder(radius: Radius.circular(8),borderType: BorderType.RRect,
-                        dashPattern: [4, 2], // Adjust dash pattern as needed
-                        color: Colors.blue,
-                        strokeWidth: 1,
-                        child: Container(
-      width: Get.width * .24,
-      height: Get.width * .24,
-      decoration: BoxDecoration(
-          color: Color(0xFF0085FF).withOpacity(0.2),
-         
-          borderRadius: BorderRadius.circular(8)),
-      child: Center(
-          child: Container(
-      height: Get.width * .22,
-      width: Get.width * .25,
-        decoration: BoxDecoration(
-            
-            image: DecorationImage(
-                image: AssetImage(
-                  "assets/imgIcon.png",
+
+  product_con() {
+    return DottedBorder(
+        radius: Radius.circular(8),
+        borderType: BorderType.RRect,
+        dashPattern: [4, 2], // Adjust dash pattern as needed
+        color: Colors.blue,
+        strokeWidth: 1,
+        child: Container(
+          width: Get.width * .24,
+          height: Get.width * .21,
+          decoration: BoxDecoration(
+              color: Color(0xFF0085FF).withOpacity(0.2),
+              borderRadius: BorderRadius.circular(8)),
+          child: Center(
+              child: Container(
+            height: Get.width * .12,
+            width: Get.width * .13,
+            decoration: BoxDecoration( 
+                image: DecorationImage(
+                    image: AssetImage(
+                      "assets/imgIcon.png",
+                    ),
+                    fit: BoxFit.fill)),
+            child: Center(
+              child: Container(
+                height: 15,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFFE77811)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(
+                      Icons.file_upload_outlined,
+                      color: Colors.white,size:7,
+                    ),
+                    Text(
+                      "Upload",
+                      style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 6),
+                    )
+                  ],
                 ),
-                fit: BoxFit.fill)),
-        child: Center(
-          child: Container(
-           height: 30,width: 120,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFE77811)),
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-               Icon(Icons.file_upload_outlined,color: Colors.white,),
-                Text(
-                  "Upload",
-                  style: TextStyle(
-                      color: Color(0xFFFFFFFF), fontSize: 16),
-                )
-              ],
+              ),
             ),
-          ),
-        ),
-      )),
-    ));
+          )),
+        ));
   }
 
-   busi_con() {
-    return   DottedBorder(radius: Radius.circular(8),borderType: BorderType.RRect,
-                        dashPattern: [4, 2], // Adjust dash pattern as needed
-                        color: Colors.blue,
-                        strokeWidth: 1,
-                        child: Container(
-      width: double.infinity,
-      height: Get.width * .38,
-      decoration: BoxDecoration(
-          color: Color(0xFF0085FF).withOpacity(0.2),
-         
-          borderRadius: BorderRadius.circular(8)),
-      child: Center(
-          child: Container(
-        height: Get.width * .3,
-        width: Get.width * .4,
-        decoration: BoxDecoration(
-            
-            image: DecorationImage(
-                image: AssetImage(
-                  "assets/imgIcon.png",
-                ),
-                fit: BoxFit.fill)),
-        child: Center(
-          child: Container(
-           height: 30,width: 120,
+  busi_con() {
+    return DottedBorder(
+        radius: Radius.circular(8),
+        borderType: BorderType.RRect,
+        dashPattern: [4, 2], // Adjust dash pattern as needed
+        color: Colors.blue,
+        strokeWidth: 1,
+        child: Container(
+          width: double.infinity,
+          height: Get.width * .38,
+          decoration: BoxDecoration(
+              color: Color(0xFF0085FF).withOpacity(0.2),
+              borderRadius: BorderRadius.circular(8)),
+          child: Center(
+              child: Container(
+            height: Get.width * .3,
+            width: Get.width * .4,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFE77811)),
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-               Icon(Icons.file_upload_outlined,color: Colors.white,),
-                Text(
-                  "Upload",
-                  style: TextStyle(
-                      color: Color(0xFFFFFFFF), fontSize: 16),
-                )
-              ],
+                image: DecorationImage(
+                    image: AssetImage(
+                      "assets/imgIcon.png",
+                    ),
+                    fit: BoxFit.fill)),
+            child: Center(
+              child: Container(
+                height: 30,
+                width: 120,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFFE77811)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(
+                      Icons.file_upload_outlined,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Upload",
+                      style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16),
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-        ),
-      )),
-    ));
+          )),
+        ));
   }
 }
