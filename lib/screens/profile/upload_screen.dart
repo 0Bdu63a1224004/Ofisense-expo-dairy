@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/route_manager.dart';
 import 'package:ofisense/screens/home/search_screen.dart';
+import 'package:dotted_border/dotted_border.dart';
 
 class Upload_Screen extends StatefulWidget {
   const Upload_Screen({super.key});
@@ -125,22 +126,28 @@ class _Upload_ScreenState extends State<Upload_Screen> {
                       ),
                     ),
                     SizedBox(height: Get.width * .02),
-                    Container(
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(Get.width * .019),
-                          child: Image.asset(
-                            "assets/plus.png",
+                   DottedBorder(
+                        radius: Radius.circular(5),
+                        borderType: BorderType.RRect,
+                        dashPattern: [4, 2], // Adjust dash pattern as needed
+                        color: Colors.blue,
+                        strokeWidth: 1,
+                        child: Container(
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(Get.width * .019),
+                              child: Image.asset(
+                                "assets/plusRounded.png",
+                              ),
+                            ),
                           ),
+                          width: double.infinity,
+                          height: Get.width * .12,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF0085FF).withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(8)),
                         ),
                       ),
-                      width: double.infinity,
-                      height: Get.width * .12,
-                      decoration: BoxDecoration(
-                          color: Color(0xFF0085FF),
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
                     SizedBox(height: Get.width * .02),
                     Text(
                       "Hall No :",
@@ -204,22 +211,28 @@ class _Upload_ScreenState extends State<Upload_Screen> {
                       ),
                     ),
                     SizedBox(height: Get.width * .02),
-                    Container(
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(Get.width * .019),
-                          child: Image.asset(
-                            "assets/plus.png",
+                   DottedBorder(
+                        radius: Radius.circular(5),
+                        borderType: BorderType.RRect,
+                        dashPattern: [4, 2], // Adjust dash pattern as needed
+                        color: Colors.blue,
+                        strokeWidth: 1,
+                        child: Container(
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(Get.width * .019),
+                              child: Image.asset(
+                                "assets/plusRounded.png",
+                              ),
+                            ),
                           ),
+                          width: double.infinity,
+                          height: Get.width * .12,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF0085FF).withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(8)),
                         ),
                       ),
-                      width: double.infinity,
-                      height: Get.width * .12,
-                      decoration: BoxDecoration(
-                          color: Color(0xFF0085FF),
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
                     SizedBox(height: Get.width * .07),
                     Text(
                       "Product Image :",
@@ -231,22 +244,28 @@ class _Upload_ScreenState extends State<Upload_Screen> {
                     SizedBox(height: Get.width * .04),
                     product_2(),
                     SizedBox(height: Get.width * .04),
-                    Container(
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(Get.width * .019),
-                          child: Image.asset(
-                            "assets/plus.png",
+                    DottedBorder(
+                        radius: Radius.circular(5),
+                        borderType: BorderType.RRect,
+                        dashPattern: [4, 2], // Adjust dash pattern as needed
+                        color: Colors.blue,
+                        strokeWidth: 1,
+                        child: Container(
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(Get.width * .019),
+                              child: Image.asset(
+                                "assets/plusRounded.png",
+                              ),
+                            ),
                           ),
+                          width: double.infinity,
+                          height: Get.width * .12,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF0085FF).withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(8)),
                         ),
                       ),
-                      width: double.infinity,
-                      height: Get.width * .12,
-                      decoration: BoxDecoration(
-                          color: Color(0xFF0085FF),
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
                     SizedBox(height: Get.width * .03),
                     Text(
                       "Remark",
