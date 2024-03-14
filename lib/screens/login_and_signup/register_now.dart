@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:ofisense/screens/login_and_signup/expo_next.dart';
 import 'package:ofisense/screens/login_and_signup/otp_screen.dart';
+import 'package:ofisense/screens/login_and_signup/signin_screen.dart';
 
 
 class Register_Now extends StatefulWidget {
@@ -71,77 +72,113 @@ class _Register_NowState extends State<Register_Now> {
                     padding: EdgeInsets.symmetric(horizontal: Get.width * .085),
                     child: Column(
                       children: [
-                        TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF827D7E)
-                                            .withOpacity(0.60))),
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                hintText: "Username",
-                                hintStyle: TextStyle(
+                        Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),
+                          child: TextFormField(
+                              decoration: InputDecoration(
+                                 enabledBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide: BorderSide(
+                                                  color: Colors.black12)),
+                                          focusedBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide:
+                                                  BorderSide(color: Colors.grey)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 20),
+                                  hintText: "User Name",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF827D7E).withOpacity(0.60),
+                                      fontSize: Get.width * .035),
+                                  suffixIcon: Icon(
+                                    Icons.person_2_outlined,
                                     color: Color(0xFF827D7E).withOpacity(0.60),
-                                    fontSize: Get.width * .035),
-                                suffixIcon: Icon(
-                                  Icons.person_2_outlined,
-                                  color: Color(0xFF827D7E).withOpacity(0.60),
-                                ))),
+                                  ))),
+                        ),
                         SizedBox(height: Get.width * .04),
-                        TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF827D7E)
-                                            .withOpacity(0.60))),
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                hintText: "Enter Your Email",
-                                hintStyle: TextStyle(
+                        Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),
+                          child: TextFormField(
+                              decoration: InputDecoration(
+                                 enabledBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide: BorderSide(
+                                                  color: Colors.black12)),
+                                          focusedBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide:
+                                                  BorderSide(color: Colors.grey)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 20),
+                                  hintText: "Enter Your Email",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF827D7E).withOpacity(0.60),
+                                      fontSize: Get.width * .035),
+                                  suffixIcon: Icon(
+                                    Icons.email_outlined,
                                     color: Color(0xFF827D7E).withOpacity(0.60),
-                                    fontSize: Get.width * .035),
-                                suffixIcon: Icon(
-                                  Icons.email_outlined,
-                                  color: Color(0xFF827D7E).withOpacity(0.60),
-                                ))),
+                                  ))),
+                        ),
                         SizedBox(height: Get.width * .04),
-                        TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF827D7E)
-                                            .withOpacity(0.60))),
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                hintText: "Phone Number",
-                                hintStyle: TextStyle(
+                        Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),
+                          child: TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide: BorderSide(
+                                                  color: Colors.black12)),
+                                          focusedBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide:
+                                                  BorderSide(color: Colors.grey)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 20),
+                                  hintText: "Phone Number",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF827D7E).withOpacity(0.60),
+                                      fontSize: Get.width * .035),
+                                  suffixIcon: Icon(
+                                    Icons.phone_iphone_rounded,
                                     color: Color(0xFF827D7E).withOpacity(0.60),
-                                    fontSize: Get.width * .035),
-                                suffixIcon: Icon(
-                                  Icons.phone_iphone_rounded,
-                                  color: Color(0xFF827D7E).withOpacity(0.60),
-                                ))),
+                                  ))),
+                        ),
                         SizedBox(height: Get.width * .04),
-                        TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF827D7E)
-                                            .withOpacity(0.60))),
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                hintText: "Password",
-                                hintStyle: TextStyle(
+                        Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),
+                          child: TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide: BorderSide(
+                                                  color: Colors.black12)),
+                                          focusedBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              borderSide:
+                                                  BorderSide(color: Colors.grey)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 20),
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(
+                                      color: Color(0xFF827D7E).withOpacity(0.60),
+                                      fontSize: Get.width * .035),
+                                  suffixIcon: Icon(
+                                    Icons.lock_outline,
                                     color: Color(0xFF827D7E).withOpacity(0.60),
-                                    fontSize: Get.width * .035),
-                                suffixIcon: Icon(
-                                  Icons.lock_outline,
-                                  color: Color(0xFF827D7E).withOpacity(0.60),
-                                ))),
+                                  ))),
+                        ),
                         SizedBox(height: Get.width * .03),
                         Text(
                           "By checking the box you agree to our Terms and Conditions.",
@@ -185,12 +222,16 @@ class _Register_NowState extends State<Register_Now> {
                                     color: Color(0xFF827D7E),
                                     fontWeight: FontWeight.w500,
                                     fontSize: Get.width * .04)),
-                            Text(
-                              "Log in",
-                              style: TextStyle(
-                                  color: Color(0xFFE77811),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: Get.width * .04),
+                            InkWell(onTap: () {
+                              Get.to(Signin_Screen());
+                            },
+                              child: Text(
+                                "Log in",
+                                style: TextStyle(
+                                    color: Color(0xFFE77811),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: Get.width * .04),
+                              ),
                             )
                           ],
                         )

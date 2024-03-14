@@ -23,432 +23,448 @@ class _Upload_ScreenState extends State<Upload_Screen> {
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: Get.width * .1,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: Get.width * .05,
-                ),
-                Container(
-                  height: 55,
-                  width: 170,
-                  child: Image.asset(
-                    "assets/logo.png",
-                    fit: BoxFit.fill,
+      body: Container( decoration: BoxDecoration(
+              image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                    Colors.white.withOpacity(
+                        0.35), // Adjust the opacity of the white color filter
+                    BlendMode.dstATop,
                   ),
-                ),
-                SizedBox(
-                  width: Get.width * .31,
-                ),
-                Column(
-                  children: [
-                    SizedBox(
-                      height: Get.width * .03,
-                    ),
-                    Container(
-                      width: 47,
-                      height: 47,
-                      decoration: BoxDecoration(shape: BoxShape.circle),
-                      child: ClipOval(
-                        child: Image.asset(
-                          'assets/dProfile.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: Get.width * .06,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: Get.width * .078),
-              child: Column(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/bg.png'))),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: Get.width * .1,
+              ),
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Expo Name :",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                  SizedBox(
+                    width: Get.width * .05,
                   ),
-                  SizedBox(height: Get.width * .012),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "Bharath",
-                        hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 148, 146, 147)),
-                        contentPadding: EdgeInsets.symmetric(
-                            horizontal: Get.width * .045,
-                            vertical: Get.width * .015)),
-                  ),
-                  SizedBox(height: Get.width * .045),
-                  Text(
-                    "Company Name :",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                  ),
-                  SizedBox(height: Get.width * .012),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "Bharath",
-                        hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 153, 149, 150)),
-                        contentPadding: EdgeInsets.symmetric(
-                            horizontal: Get.width * .045,
-                            vertical: Get.width * .015)),
-                  ),
-                  SizedBox(height: Get.width * .045),
-                  Text(
-                    "Business Card :",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                  ),
-                  SizedBox(height: Get.width * .025),
-                  // Container(
-                  //   width: double.infinity,
-                  //   height: Get.width * .37,
-                  //   decoration: BoxDecoration(
-                  //       image: DecorationImage(
-                  //           image: AssetImage("assets/bod.png"))),
-                  // ),
                   Container(
-        margin: EdgeInsets.symmetric( vertical: 5),
-        child: DottedBorder(
-          dashPattern: [4, 2], // Adjust dash pattern as needed
-          color: Colors.blue,
-          strokeWidth: 1,
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-             
-              Container(
-                height: 140,
-                width: double.infinity,
-                decoration:
-                    BoxDecoration(color: Color(0xFF0085FF).withOpacity(0.2), image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/bod.png"))),
-                
-              ),
-               Positioned(
-                child: DottedBorder(
-                  borderType: BorderType.Circle,
-                  padding: EdgeInsets.all(2),
-                  dashPattern: [4, 2], // Adjust dash pattern as needed
-                  color: Colors.blue,
-                  strokeWidth: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.edit_square,
-                        size: 16,
-                      ),
+                    height: 55,
+                    width: 170,
+                    child: Image.asset(
+                      "assets/logo.png",
+                      fit: BoxFit.fill,
                     ),
                   ),
-                ),
-                top: -8,
-                right: -8,
-              ),
-            ],
-          ),
-        ),
-      ),
-
-      Container(
-        margin: EdgeInsets.symmetric( vertical: 5),
-        child: DottedBorder(
-          dashPattern: [4, 2], // Adjust dash pattern as needed
-          color: Colors.blue,
-          strokeWidth: 1,
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-             
-              Container(
-                height: 140,
-                width: double.infinity,
-                decoration:
-                    BoxDecoration(color: Color(0xFF0085FF).withOpacity(0.2), image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/bod.png"))),
-                
-              ),
-               Positioned(
-                child: DottedBorder(
-                  borderType: BorderType.Circle,
-                  padding: EdgeInsets.all(2),
-                  dashPattern: [4, 2], // Adjust dash pattern as needed
-                  color: Colors.blue,
-                  strokeWidth: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.edit_square,
-                        size: 16,
-                      ),
-                    ),
+                  SizedBox(
+                    width: Get.width * .31,
                   ),
-                ),
-                top: -8,
-                right: -8,
-              ),
-            ],
-          ),
-        ),
-      ),
-                 
-                  SizedBox(height: Get.width * .02),
-                  DottedBorder(
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    dashPattern: [4, 2], // Adjust dash pattern as needed
-                    color: Colors.blue,
-                    strokeWidth: 1,
-                    child: Container(
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(Get.width * .019),
-                          child: Image.asset(
-                            "assets/plusRounded.png",
-                          ),
-                        ),
-                      ),
-                      width: double.infinity,
-                      height: Get.width * .12,
-                      decoration: BoxDecoration(
-                          color: Color(0xFF0085FF).withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
-                  ),
-                  SizedBox(height: Get.width * .02),
-                  Text(
-                    "Hall No :",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                  ),
-                  SizedBox(height: Get.width * .012),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "14552",
-                        hintStyle: TextStyle(color: Color(0xFF827D7E)),
-                        contentPadding: EdgeInsets.symmetric(
-                            horizontal: Get.width * .045,
-                            vertical: Get.width * .015)),
-                  ),
-                  SizedBox(height: Get.width * .05),
-                  Text(
-                    "Booth No :",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                  ),
-                  SizedBox(height: Get.width * .012),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "25881",
-                        hintStyle: TextStyle(color: Color(0xFF827D7E)),
-                        contentPadding: EdgeInsets.symmetric(
-                            horizontal: Get.width * .045,
-                            vertical: Get.width * .015)),
-                  ),
-                  SizedBox(height: Get.width * .03),
-                  Text(
-                    "Booth Image :",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                  ),
-                  SizedBox(height: Get.width * .025),
-                Stack(clipBehavior: Clip.none,
+                  Column(
                     children: [
+                      SizedBox(
+                        height: Get.width * .03,
+                      ),
                       Container(
-                        width: double.infinity,
-                        height: Get.width * .37,
-                        decoration: BoxDecoration(
-                         image: DecorationImage(image: AssetImage("assets/app.png"),fit: BoxFit.cover),
-                            borderRadius: BorderRadius.circular(5)),
-                        
-                      ),
-                      Positioned(
-                child: DottedBorder(
-                  borderType: BorderType.Circle,
-                  padding: EdgeInsets.all(2),
-                  dashPattern: [4, 2], // Adjust dash pattern as needed
-                  color: Colors.blue,
-                  strokeWidth: 1,
-                  child: CircleAvatar(backgroundColor: Colors.white,
-                  
-                     radius: 15,
-                   
-                      child: InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.edit_square,
-                          size: 18,color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-                
-                top: -8,
-                right: -8,
-              ),
-                    ],
-                  ),
-                  SizedBox(height: Get.width * .02),
-                  Stack(clipBehavior: Clip.none,
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        height: Get.width * .37,
-                        decoration: BoxDecoration(
-                         image: DecorationImage(image: AssetImage("assets/app.png"),fit: BoxFit.cover),
-                            borderRadius: BorderRadius.circular(5)),
-                     
-                      ),
-                      Positioned(
-                child: DottedBorder(
-                  borderType: BorderType.Circle,
-                  padding: EdgeInsets.all(2),
-                  dashPattern: [4, 2], // Adjust dash pattern as needed
-                  color: Colors.blue,
-                  strokeWidth: 1,
-                  child: CircleAvatar(backgroundColor: Colors.white,
-                  
-                     radius: 15,
-                   
-                      child: InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.edit_square,
-                          size: 18,color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-                
-                top: -8,
-                right: -8,
-              ),
-                    ],
-                  ),
-                  SizedBox(height: Get.width * .02),
-                  DottedBorder(
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    dashPattern: [4, 2], // Adjust dash pattern as needed
-                    color: Colors.blue,
-                    strokeWidth: 1,
-                    child: Container(
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(Get.width * .019),
+                        width: 47,
+                        height: 47,
+                        decoration: BoxDecoration(shape: BoxShape.circle),
+                        child: ClipOval(
                           child: Image.asset(
-                            "assets/plusRounded.png",
+                            'assets/dProfile.png',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      width: double.infinity,
-                      height: Get.width * .12,
-                      decoration: BoxDecoration(
-                          color: Color(0xFF0085FF).withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
-                  ),
-                  SizedBox(height: Get.width * .07),
-                  Text(
-                    "Product Image :",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                  ),
-                  SizedBox(height: Get.width * .02),
-                  product_1(),
-                  SizedBox(height: Get.width * .04),
-                  product_2(),
-                  SizedBox(height: Get.width * .04),
-                  DottedBorder(
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    dashPattern: [4, 2], // Adjust dash pattern as needed
-                    color: Colors.blue,
-                    strokeWidth: 1,
-                    child: Container(
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(Get.width * .019),
-                          child: Image.asset(
-                            "assets/plusRounded.png",
-                          ),
-                        ),
-                      ),
-                      width: double.infinity,
-                      height: Get.width * .12,
-                      decoration: BoxDecoration(
-                          color: Color(0xFF0085FF).withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
-                  ),
-                  SizedBox(height: Get.width * .03),
-                  Text(
-                    "Remark",
-                    style: TextStyle(
-                        color: Color(0xFF827D7E), fontSize: Get.width * .043),
-                  ),
-                  SizedBox(height: Get.width * .012),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.symmetric(
-                            horizontal: Get.width * .045,
-                            vertical: Get.width * .015)),
-                  ),
-                  SizedBox(height: Get.width * .06),
-                  Container(
-                    width: double.infinity,
-                    height: Get.width * .13,
-                    decoration: BoxDecoration(
-                        color: Color(0xFFE77811),
-                        borderRadius: BorderRadius.circular(35),
-                        boxShadow: [
-                          BoxShadow(
-                              spreadRadius: 0.02,
-                              blurRadius: 5,
-                              color: Color.fromARGB(255, 204, 203, 203),
-                              offset: Offset(0, 5))
-                        ]),
-                    child: Center(
-                        child: InkWell(
-                      onTap: () {
-                        Get.to(() => SearchScreen());
-                      },
-                      child: Text(
-                        "Update",
-                        style: TextStyle(
-                            color: Color(0xFFFFFFFF),
-                            fontWeight: FontWeight.w500,
-                            fontSize: Get.width * .05),
-                      ),
-                    )),
-                  ),
-                  SizedBox(height: Get.width * .2)
+                    ],
+                  )
                 ],
               ),
-            ),
-          ],
+              SizedBox(
+                height: Get.width * .06,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: Get.width * .078),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Expo Name :",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .012),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: "Bharath",
+                          hintStyle: TextStyle(
+                              color: Color.fromARGB(255, 148, 146, 147)),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: Get.width * .045,
+                              vertical: Get.width * .015)),
+                    ),
+                    SizedBox(height: Get.width * .045),
+                    Text(
+                      "Company Name :",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .012),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: "Bharath",
+                          hintStyle: TextStyle(
+                              color: Color.fromARGB(255, 153, 149, 150)),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: Get.width * .045,
+                              vertical: Get.width * .015)),
+                    ),
+                    SizedBox(height: Get.width * .045),
+                    Text(
+                      "Business Card :",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .025),
+                    // Container(
+                    //   width: double.infinity,
+                    //   height: Get.width * .37,
+                    //   decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //           image: AssetImage("assets/bod.png"))),
+                    // ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: DottedBorder(
+                        dashPattern: [4, 2], // Adjust dash pattern as needed
+                        color: Colors.blue,
+                        strokeWidth: 1,
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                              height: 140,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFF0085FF).withOpacity(0.2),
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage("assets/bod.png"))),
+                            ),
+                            Positioned(
+                              child: DottedBorder(
+                                borderType: BorderType.Circle,
+                                padding: EdgeInsets.all(2),
+                                dashPattern: [
+                                  4,
+                                  2
+                                ], // Adjust dash pattern as needed
+                                color: Colors.blue,
+                                strokeWidth: 1,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Icon(
+                                      Icons.edit_square,
+                                      size: 16,color: Color(0xFF827D7E),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              top: -8,
+                              right: -8,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+        
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      child: DottedBorder(
+                        dashPattern: [4, 2], // Adjust dash pattern as needed
+                        color: Colors.blue,
+                        strokeWidth: 1,
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                              height: 140,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFF0085FF).withOpacity(0.2),
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage("assets/bod.png"))),
+                            ),
+                            Positioned(
+                              child: DottedBorder(
+                                borderType: BorderType.Circle,
+                                padding: EdgeInsets.all(2),
+                                dashPattern: [
+                                  4,
+                                  2
+                                ], // Adjust dash pattern as needed
+                                color: Colors.blue,
+                                strokeWidth: 1,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Icon(
+                                      Icons.edit_square,
+                                      size: 16,color: Color(0xFF827D7E),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              top: -8,
+                              right: -8,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+        
+                    SizedBox(height: Get.width * .02),
+                    DottedBorder(
+                      radius: Radius.circular(5),
+                      borderType: BorderType.RRect,
+                      dashPattern: [4, 2], // Adjust dash pattern as needed
+                      color: Colors.blue,
+                      strokeWidth: 1,
+                      child: Container(
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(Get.width * .019),
+                            child: Image.asset(
+                              "assets/plusRounded.png",
+                            ),
+                          ),
+                        ),
+                        width: double.infinity,
+                        height: Get.width * .12,
+                        decoration: BoxDecoration(
+                            color: Color(0xFF0085FF).withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(8)),
+                      ),
+                    ),
+                    SizedBox(height: Get.width * .02),
+                    Text(
+                      "Hall No :",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .012),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: "14552",
+                          hintStyle: TextStyle(color: Color(0xFF827D7E)),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: Get.width * .045,
+                              vertical: Get.width * .015)),
+                    ),
+                    SizedBox(height: Get.width * .05),
+                    Text(
+                      "Booth No :",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .012),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: "25881",
+                          hintStyle: TextStyle(color: Color(0xFF827D7E)),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: Get.width * .045,
+                              vertical: Get.width * .015)),
+                    ),
+                    SizedBox(height: Get.width * .03),
+                    Text(
+                      "Booth Image :",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .025),
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: Get.width * .37,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage("assets/app.png"),
+                                  fit: BoxFit.cover),
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                        Positioned(
+                          child: DottedBorder(
+                            borderType: BorderType.Circle,
+                            padding: EdgeInsets.all(2),
+                            dashPattern: [4, 2], // Adjust dash pattern as needed
+                            color: Colors.blue,
+                            strokeWidth: 1,
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 15,
+                              child: InkWell(
+                                onTap: () {},
+                                child: Icon(
+                                  Icons.edit_square,
+                                  size: 18,
+                                  color: Color(0xFF827D7E),
+                                ),
+                              ),
+                            ),
+                          ),
+                          top: -8,
+                          right: -8,
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: Get.width * .02),
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: Get.width * .37,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage("assets/app.png"),
+                                  fit: BoxFit.cover),
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                        Positioned(
+                          child: DottedBorder(
+                            borderType: BorderType.Circle,
+                            padding: EdgeInsets.all(2),
+                            dashPattern: [4, 2], // Adjust dash pattern as needed
+                            color: Colors.blue,
+                            strokeWidth: 1,
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 15,
+                              child: InkWell(
+                                onTap: () {},
+                                child: Icon(
+                                  Icons.edit_square,
+                                  size: 18,
+                                  color: Color(0xFF827D7E),
+                                ),
+                              ),
+                            ),
+                          ),
+                          top: -8,
+                          right: -8,
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: Get.width * .02),
+                    DottedBorder(
+                      radius: Radius.circular(5),
+                      borderType: BorderType.RRect,
+                      dashPattern: [4, 2], // Adjust dash pattern as needed
+                      color: Colors.blue,
+                      strokeWidth: 1,
+                      child: Container(
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(Get.width * .019),
+                            child: Image.asset(
+                              "assets/plusRounded.png",
+                            ),
+                          ),
+                        ),
+                        width: double.infinity,
+                        height: Get.width * .12,
+                        decoration: BoxDecoration(
+                            color: Color(0xFF0085FF).withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(8)),
+                      ),
+                    ),
+                    SizedBox(height: Get.width * .07),
+                    Text(
+                      "Product Image :",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .02),
+                    product_1(),
+                    SizedBox(height: Get.width * .04),
+                    product_2(),
+                    SizedBox(height: Get.width * .04),
+                    DottedBorder(
+                      radius: Radius.circular(5),
+                      borderType: BorderType.RRect,
+                      dashPattern: [4, 2], // Adjust dash pattern as needed
+                      color: Colors.blue,
+                      strokeWidth: 1,
+                      child: Container(
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(Get.width * .019),
+                            child: Image.asset(
+                              "assets/plusRounded.png",
+                            ),
+                          ),
+                        ),
+                        width: double.infinity,
+                        height: Get.width * .12,
+                        decoration: BoxDecoration(
+                            color: Color(0xFF0085FF).withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(8)),
+                      ),
+                    ),
+                    SizedBox(height: Get.width * .03),
+                    Text(
+                      "Remark",
+                      style: TextStyle(
+                          color: Color(0xFF827D7E), fontSize: Get.width * .043),
+                    ),
+                    SizedBox(height: Get.width * .012),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: Get.width * .045,
+                              vertical: Get.width * .015)),
+                    ),
+                    SizedBox(height: Get.width * .06),
+                    Container(
+                      width: double.infinity,
+                      height: Get.width * .13,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFE77811),
+                          borderRadius: BorderRadius.circular(35),
+                          boxShadow: [
+                            BoxShadow(
+                                spreadRadius: 0.02,
+                                blurRadius: 5,
+                                color: Color.fromARGB(255, 204, 203, 203),
+                                offset: Offset(0, 5))
+                          ]),
+                      child: Center(
+                          child: InkWell(
+                        onTap: () {
+                          Get.to(() => SearchScreen());
+                        },
+                        child: Text(
+                          "Update",
+                          style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontWeight: FontWeight.w500,
+                              fontSize: Get.width * .05),
+                        ),
+                      )),
+                    ),
+                    SizedBox(height: Get.width * .2)
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: DummyBottomBar(),
@@ -477,7 +493,40 @@ class _Upload_ScreenState extends State<Upload_Screen> {
         children: [
           Column(
             children: [
-              product_con(),
+              DottedBorder(radius: Radius.circular(5),
+                    borderType: BorderType.RRect,
+                    dashPattern: [4, 2], // Adjust dash pattern as needed
+                    color: Colors.blue,
+                    strokeWidth: 1,child:Stack(clipBehavior: Clip.none,
+                      children:[ Container(
+                            height: Get.width * .21,
+                            width: Get.width * .24,
+                            decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(4)),
+                          ),Positioned(
+                        child: DottedBorder(
+                          borderType: BorderType.Circle,
+                          padding: EdgeInsets.all(1.5),
+                          dashPattern: [4, 2], // Adjust dash pattern as needed
+                          color: Colors.blue,
+                          strokeWidth: 1,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 15,
+                            child: InkWell(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.edit_square,
+                                size: 20,
+                                color: Color(0xFF827D7E),
+                              ),
+                            ),
+                          ),
+                        ),
+                        top: -8,
+                        right: -8,
+                      ),]
+                    )),
               SizedBox(
                 height: Get.width * .015,
               ),
@@ -647,7 +696,40 @@ class _Upload_ScreenState extends State<Upload_Screen> {
         children: [
           Column(
             children: [
-              product_con(),
+               DottedBorder(radius: Radius.circular(5),
+                    borderType: BorderType.RRect,
+                    dashPattern: [4, 2], // Adjust dash pattern as needed
+                    color: Colors.blue,
+                    strokeWidth: 1,child:Stack(clipBehavior: Clip.none,
+                      children:[ Container(
+                            height: Get.width * .21,
+                            width: Get.width * .24,
+                            decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(4)),
+                          ),Positioned(
+                        child: DottedBorder(
+                          borderType: BorderType.Circle,
+                          padding: EdgeInsets.all(1.5),
+                          dashPattern: [4, 2], // Adjust dash pattern as needed
+                          color: Colors.blue,
+                          strokeWidth: 1,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 15,
+                            child: InkWell(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.edit_square,
+                                size: 20,
+                                color: Color(0xFF827D7E),
+                              ),
+                            ),
+                          ),
+                        ),
+                        top: -8,
+                        right: -8,
+                      ),]
+                    )),
               SizedBox(
                 height: Get.width * .015,
               ),
@@ -797,10 +879,10 @@ class _Upload_ScreenState extends State<Upload_Screen> {
 
   Container product_con() {
     return Container(
-      height: Get.width * .22,
-      width: Get.width * .25,
+      height: Get.width * .21,
+      width: Get.width * .24,
       decoration: BoxDecoration(
-          border: Border.all(), borderRadius: BorderRadius.circular(4)),
+           borderRadius: BorderRadius.circular(4)),
     );
   }
 }

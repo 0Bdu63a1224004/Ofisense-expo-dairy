@@ -24,12 +24,13 @@ class _Signin_ScreenState extends State<Signin_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-    child: Column(
+        child: Column(
           children: [
             SizedBox(
               height: Get.width * 0.17,
             ),
-            Container(width: Get.width*0.7,
+            Container(
+              width: Get.width * 0.7,
               child: Image.asset(
                 "assets/logo.png",
                 fit: BoxFit.fill,
@@ -42,7 +43,8 @@ class _Signin_ScreenState extends State<Signin_Screen> {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                   image: DecorationImage(image: AssetImage('assets/bg.png'),fit: BoxFit.cover),
+                    image: DecorationImage(
+                        image: AssetImage('assets/bg.png'), fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(32),
                       topRight: Radius.circular(32),
@@ -52,8 +54,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                           spreadRadius: 1,
                           blurRadius: 10,
                           color: Color.fromARGB(255, 159, 159, 159)),
-                    ]
-                    ),
+                    ]),
                 child: Column(
                   children: [
                     SizedBox(
@@ -76,7 +77,9 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                     SizedBox(
                       height: Get.width * .11,
                     ),
-                    emailField(),
+                    Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),child: emailField()),
                     SizedBox(
                       height: Get.width * .05,
                     ),
@@ -90,26 +93,27 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                           width: Get.width * .045,
                         ),
                         Checkbox(
-                          value: _bool,checkColor: Colors.black,
+                          value: _bool,
+                          checkColor: Colors.black,
                           activeColor: Color(0xFFFFFFFF),
                           onChanged: (value) {
-                            _bool = !_bool;setState(() {
-                              
-                            });
+                            _bool = !_bool;
+                            setState(() {});
                           },
                         ),
                         Text(
                           "Remember me",
                           style: TextStyle(
-                              color: Colors.black54,
+                              color: Color(0xFF000000).withOpacity(.60),
                               fontSize: Get.width * .034),
                         ),
                         SizedBox(
                           width: Get.width * .15,
                         ),
-                        InkWell(onTap: () {
-                           Get.to(Change_Password());
-                        },
+                        InkWell(
+                          onTap: () {
+                            Get.to(Change_Password());
+                          },
                           child: Text(
                             "Forgot Password?",
                             style: TextStyle(
@@ -127,14 +131,19 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                         Expanded(
                             child: Padding(
                                 padding: EdgeInsets.fromLTRB(
-                                    Get.width * .05, 0, Get.width * .02, 0),
-                                child: Divider())),
-                        Text("OR"),
+                                    Get.width * .08, 0, Get.width * .02, 0),
+                                child: Divider(thickness: 2,color: Color(0xFF827D7E).withOpacity(.60)))),
+                        Text(
+                          "OR",
+                          style: TextStyle(
+                              fontSize: Get.width * .045,
+                              color: Color(0xFF000000).withOpacity(.60)),
+                        ),
                         Expanded(
                             child: Padding(
                           padding: EdgeInsets.fromLTRB(
-                              Get.width * .02, 0, Get.width * .05, 0),
-                          child: Divider(),
+                              Get.width * .02, 0, Get.width * .08, 0),
+                          child: Divider(thickness: 2,color: Color(0xFF827D7E).withOpacity(.60),),
                         )),
                       ],
                     ),
@@ -175,9 +184,10 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                                 color: Color(0xFF827D7E),
                                 fontWeight: FontWeight.w500,
                                 fontSize: Get.width * .04)),
-                        InkWell(onTap: () {
-                          Get.to(Register_Now());
-                        },
+                        InkWell(
+                          onTap: () {
+                            Get.to(Register_Now());
+                          },
                           child: Text(
                             "Register Now",
                             style: TextStyle(
@@ -201,39 +211,54 @@ class _Signin_ScreenState extends State<Signin_Screen> {
   Padding passField() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Get.width * .08),
-      child: TextFormField(
-          decoration: InputDecoration(
-             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(30),borderSide: BorderSide(color: Colors.black12))
-             , focusedBorder:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(30),borderSide: BorderSide(color: Colors.grey)),
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              hintText: "Password",
-              hintStyle: TextStyle(
-                  color: Colors.black26, fontSize: Get.width * .035),
-              suffixIcon: Icon(
-                Icons.lock_outline,
-                color: Colors.black26,
-              ))),
+      child: Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),
+        child: TextFormField(
+            decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide(color: Colors.black12)),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide(color: Colors.grey)),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                hintText: "Password",
+                hintStyle:
+                    TextStyle(color: Colors.black26, fontSize: Get.width * .035),
+                suffixIcon: Icon(
+                  Icons.lock_outline,
+                  color: Colors.black26,
+                ))),
+      ),
     );
   }
 
   Padding emailField() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Get.width * .08),
-      child: TextFormField(
-          decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(30),borderSide: BorderSide(color: Colors.black12))
-             , focusedBorder:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(30),borderSide: BorderSide(color: Colors.grey)),
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              hintText: "Enter your Email",
-              hintStyle: TextStyle(
-                  color: Colors.black26, fontSize: Get.width * .035),
-              suffixIcon: Icon(
-                Icons.mail_outlined,
-                color: Colors.black26,
-              ))),
+      child: Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),
+        child: TextFormField(
+            decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide(color: Colors.black12)),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide(color: Colors.grey)),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                hintText: "Enter your Email",
+                hintStyle:
+                    TextStyle(color: Colors.black26, fontSize: Get.width * .035),
+                suffixIcon: Icon(
+                  Icons.mail_outlined,
+                  color: Colors.black26,
+                ))),
+      ),
     );
   }
 }

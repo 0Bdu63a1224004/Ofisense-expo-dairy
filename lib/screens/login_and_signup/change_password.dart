@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-
+import 'package:ofisense/screens/login_and_signup/signin_screen.dart';
 
 class Change_Password extends StatefulWidget {
   const Change_Password({super.key});
@@ -60,7 +60,7 @@ class _Change_PasswordState extends State<Change_Password> {
                   Text(
                     "Enter Your Password",
                     style: TextStyle(
-                        color: Color(0xFF252525),
+                        color: Color(0xFF827D7E),
                         fontWeight: FontWeight.normal,
                         fontSize: Get.width * .04),
                   ),
@@ -69,60 +69,90 @@ class _Change_PasswordState extends State<Change_Password> {
                     padding: EdgeInsets.symmetric(horizontal: Get.width * .085),
                     child: Column(
                       children: [
-                        TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF827D7E)
-                                            .withOpacity(0.60))),
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                hintText: "Enter Your Email",
-                                hintStyle: TextStyle(
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide:
+                                          BorderSide(color: Colors.black12)),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide:
+                                          BorderSide(color: Colors.grey)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 20),
+                                  hintText: "Enter Your Email",
+                                  hintStyle: TextStyle(
+                                      color:
+                                          Color(0xFF827D7E).withOpacity(0.60),
+                                      fontSize: Get.width * .035),
+                                  suffixIcon: Icon(
+                                    Icons.email_outlined,
                                     color: Color(0xFF827D7E).withOpacity(0.60),
-                                    fontSize: Get.width * .035),
-                                suffixIcon: Icon(
-                                  Icons.email_outlined,
-                                  color: Color(0xFF827D7E).withOpacity(0.60),
-                                ))),
+                                  ))),
+                        ),
                         SizedBox(height: Get.width * .04),
-                        TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF827D7E)
-                                            .withOpacity(0.60))),
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                hintText: "Old Password",
-                                hintStyle: TextStyle(
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide:
+                                          BorderSide(color: Colors.black12)),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide:
+                                          BorderSide(color: Colors.grey)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 20),
+                                  hintText: "Old Password",
+                                  hintStyle: TextStyle(
+                                      color:
+                                          Color(0xFF827D7E).withOpacity(0.60),
+                                      fontSize: Get.width * .035),
+                                  suffixIcon: Icon(
+                                    Icons.lock_outline,
                                     color: Color(0xFF827D7E).withOpacity(0.60),
-                                    fontSize: Get.width * .035),
-                                suffixIcon: Icon(
-                                  Icons.lock_outline,
-                                  color: Color(0xFF827D7E).withOpacity(0.60),
-                                ))),
+                                  ))),
+                        ),
                         SizedBox(height: Get.width * .04),
-                        TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF827D7E)
-                                            .withOpacity(0.60))),
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                hintText: "New Password",
-                                hintStyle: TextStyle(
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: TextFormField(
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide:
+                                          BorderSide(color: Colors.black12)),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide:
+                                          BorderSide(color: Colors.grey)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 20),
+                                  hintText: "New Password",
+                                  hintStyle: TextStyle(
+                                      color:
+                                          Color(0xFF827D7E).withOpacity(0.60),
+                                      fontSize: Get.width * .035),
+                                  suffixIcon: Icon(
+                                    Icons.lock_outline,
                                     color: Color(0xFF827D7E).withOpacity(0.60),
-                                    fontSize: Get.width * .035),
-                                suffixIcon: Icon(
-                                  Icons.lock_outline,
-                                  color: Color(0xFF827D7E).withOpacity(0.60),
-                                ))),
-                          SizedBox(
+                                  ))),
+                        ),
+                        SizedBox(
                           height: Get.width * .38,
                         ),
                         Container(
@@ -140,9 +170,7 @@ class _Change_PasswordState extends State<Change_Password> {
                               ]),
                           child: Center(
                               child: InkWell(
-                            onTap: () {
-                            
-                            },
+                            onTap: () {},
                             child: Text(
                               "Change Password",
                               style: TextStyle(
@@ -163,16 +191,20 @@ class _Change_PasswordState extends State<Change_Password> {
                                     color: Color(0xFF827D7E),
                                     fontWeight: FontWeight.w500,
                                     fontSize: Get.width * .04)),
-                            Text(
-                              "Log in",
-                              style: TextStyle(
-                                  color: Color(0xFFE77811),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: Get.width * .04),
+                            InkWell(
+                              onTap: () {
+                                Get.to(Signin_Screen());
+                              },
+                              child: Text(
+                                "Log in",
+                                style: TextStyle(
+                                    color: Color(0xFFE77811),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: Get.width * .04),
+                              ),
                             )
                           ],
                         ),
-                      
                       ],
                     ),
                   )

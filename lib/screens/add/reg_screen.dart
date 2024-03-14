@@ -19,12 +19,21 @@ class _Reg_ScreenState extends State<Reg_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(
+                      0.35), // Adjust the opacity of the white color filter
+                  BlendMode.dstATop,
+                ),
+                fit: BoxFit.cover,
+                image: AssetImage('assets/bg.png'))),
         child: SingleChildScrollView(
           child: Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
+                SizedBox(height: Get.width * .00),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -77,11 +86,23 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                             fontSize: Get.width * .043),
                       ),
                       SizedBox(height: Get.width * .012),
-                      TextFormField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            contentPadding: EdgeInsets.symmetric(
-                                vertical: Get.width * .015)),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(
+                                5) // Change this to the desired background color
+                            ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Colors.black12)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFF827D7E))),
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: Get.width * .015)),
+                        ),
                       ),
                       SizedBox(
                         height: Get.width * .045,
@@ -127,13 +148,23 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                             fontSize: Get.width * .043),
                       ),
                       SizedBox(height: Get.width * .012),
-                      TextFormField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF827D7E))),
-                            contentPadding: EdgeInsets.symmetric(
-                                vertical: Get.width * .01)),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(
+                                5) // Change this to the desired background color
+                            ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Colors.black12)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFF827D7E))),
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: Get.width * .01)),
+                        ),
                       ),
                       SizedBox(height: Get.width * .06),
                       Text(
@@ -143,13 +174,23 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                             fontSize: Get.width * .043),
                       ),
                       SizedBox(height: Get.width * .012),
-                      TextFormField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF827D7E))),
-                            contentPadding: EdgeInsets.symmetric(
-                                vertical: Get.width * .01)),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(
+                              5), // Change this to the desired background color
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Colors.black12)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFF827D7E))),
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: Get.width * .01)),
+                        ),
                       ),
                       SizedBox(
                         height: Get.width * .04,
@@ -203,6 +244,13 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                         width: double.infinity,
                         height: Get.width * .361,
                         decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  spreadRadius: .5,
+                                  blurRadius: 5,
+                                  color: Color.fromARGB(255, 192, 190, 190),
+                                  offset: Offset(0, 5))
+                            ],
                             border: Border.all(
                               color: Color(0xFF827D7E),
                             ),
@@ -219,13 +267,15 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                   width: Get.width * .24,
                                   height: Get.width * .06,
                                   decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0xFF827D7E).withOpacity(.51)),
+                                      border: Border.all(
+                                          color: Color(0xFF827D7E)
+                                              .withOpacity(.51)),
                                       borderRadius: BorderRadius.circular(5)),
                                   child: Center(
                                     child: Text("Product Name",
                                         style: TextStyle(
-                                            color: Color(0xFF827D7E).withOpacity(.60),
+                                            color: Color(0xFF827D7E)
+                                                .withOpacity(.60),
                                             fontSize: Get.width * .022)),
                                   ),
                                 ),
@@ -254,7 +304,8 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E).withOpacity(.51)),
+                                                color: Color(0xFF827D7E)
+                                                    .withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -276,7 +327,8 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E).withOpacity(.51)),
+                                                color: Color(0xFF827D7E)
+                                                    .withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -298,7 +350,8 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E).withOpacity(.51)),
+                                                color: Color(0xFF827D7E)
+                                                    .withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -320,7 +373,8 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                                         width: Get.width * .33,
                                         decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Color(0xFF827D7E).withOpacity(.51)),
+                                                color: Color(0xFF827D7E)
+                                                    .withOpacity(.51)),
                                             borderRadius:
                                                 BorderRadius.circular(5)))
                                   ],
@@ -330,7 +384,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                           ],
                         ),
                       ),
-                      SizedBox(height: Get.width * .015),
+                      SizedBox(height: Get.width * .02),
                       DottedBorder(
                         radius: Radius.circular(5),
                         borderType: BorderType.RRect,
@@ -387,7 +441,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                         child: Center(
                             child: InkWell(
                           onTap: () {
-                           Get.to(() => DetailsScreen());
+                            Get.to(() => DetailsScreen());
                           },
                           child: Text(
                             "Submit",
@@ -404,7 +458,9 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 70,)
+                SizedBox(
+                  height: 70,
+                )
               ],
             ),
           ),
@@ -430,7 +486,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
               child: Container(
             height: Get.width * .12,
             width: Get.width * .13,
-            decoration: BoxDecoration( 
+            decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
                       "assets/imgIcon.png",
@@ -448,7 +504,8 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                   children: [
                     Icon(
                       Icons.file_upload_outlined,
-                      color: Colors.white,size:7,
+                      color: Colors.white,
+                      size: 7,
                     ),
                     Text(
                       "Upload",

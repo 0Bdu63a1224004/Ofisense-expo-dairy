@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:ofisense/screens/add/detail_screen.dart';
 
-
 class Update_Screen extends StatefulWidget {
   const Update_Screen({super.key});
 
@@ -22,7 +21,6 @@ class _Update_ScreenState extends State<Update_Screen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-           
             Center(
               child: Container(
                 width: Get.width * 0.7,
@@ -45,22 +43,28 @@ class _Update_ScreenState extends State<Update_Screen> {
                   SizedBox(
                     height: Get.width * .01,
                   ),
-                  TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide(
-                                  color: Color(0xFF827D7E).withOpacity(0.60))),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 20),
-                          hintText: "Expo Name",
-                          hintStyle: TextStyle(
+                  Container(decoration: BoxDecoration(
+        color: Colors.white, // Change this to the desired background color
+        borderRadius: BorderRadius.circular(30.0),),
+                    child: TextFormField(
+                        decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: BorderSide(color: Colors.black12)),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: BorderSide(color: Colors.grey)),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 20),
+                            hintText: "Expo Name",
+                            hintStyle: TextStyle(
+                                color: Color(0xFF827D7E).withOpacity(0.60),
+                                fontSize: Get.width * .035),
+                            suffixIcon: Icon(
+                              Icons.person_2_outlined,
                               color: Color(0xFF827D7E).withOpacity(0.60),
-                              fontSize: Get.width * .035),
-                          suffixIcon: Icon(
-                            Icons.person_2_outlined,
-                            color: Color(0xFF827D7E).withOpacity(0.60),
-                          ))),
+                            ))),
+                  ),
                   SizedBox(
                     height: Get.width * .17,
                   )
@@ -84,9 +88,7 @@ class _Update_ScreenState extends State<Update_Screen> {
                     ]),
                 child: Center(
                     child: InkWell(
-                  onTap: () {
-                    
-                  },
+                  onTap: () {},
                   child: Text(
                     "Update",
                     style: TextStyle(
