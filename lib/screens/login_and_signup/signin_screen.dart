@@ -10,6 +10,7 @@ import 'package:ofisense/screens/home/home_screen.dart';
 import 'package:ofisense/screens/login_and_signup/change_password.dart';
 import 'package:ofisense/screens/login_and_signup/otp_screen.dart';
 import 'package:ofisense/screens/login_and_signup/register_now.dart';
+import 'package:http/http.dart' as http;
 
 class Signin_Screen extends StatefulWidget {
   const Signin_Screen({super.key});
@@ -20,189 +21,236 @@ class Signin_Screen extends StatefulWidget {
 
 class _Signin_ScreenState extends State<Signin_Screen> {
   bool _bool = false;
+  var _response;
+  final _formkey = GlobalKey<FormState>();
+  final _emailcontroler = TextEditingController();
+  final _passwordcontroler = TextEditingController();
+
+  _sendDataToAPI(String _email, String _pass) async {
+    var response = await http.post(Uri.parse(
+        'https://www.foreliustech.co.in/chair/api/login.php?email=$_email&pass=$_pass'));
+    print(response.statusCode);
+    print(_email);
+    print(_pass);
+    if (response.statusCode == 200) {
+      setState(() {
+        print('hai');
+        _response = response.body;
+      });
+    } else {
+      setState(() {
+        _response = 'Error: ${response.statusCode}';
+      });
+    }
+    return response.statusCode;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            SizedBox(
-              height: Get.width * 0.17,
-            ),
-            Container(
-              width: Get.width * 0.7,
-              child: Image.asset(
-                "assets/logo.png",
-                fit: BoxFit.fill,
+      body: Expanded(
+        child: Container(
+          child: Column(
+            children: [
+              SizedBox(
+                height: Get.width * 0.17,
               ),
-            ),
-            SizedBox(
-              height: Get.width * .05,
-            ),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/bg.png'), fit: BoxFit.cover),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(32),
-                      topRight: Radius.circular(32),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                          spreadRadius: 1,
-                          blurRadius: 10,
-                          color: Color.fromARGB(255, 159, 159, 159)),
-                    ]),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: Get.width * .15,
-                    ),
-                    Text(
-                      "Wellcome Back",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E),
-                          fontWeight: FontWeight.w600,
-                          fontSize: Get.width * .073),
-                    ),
-                    Text(
-                      "sign in to access your account",
-                      style: TextStyle(
-                          color: Color(0xFF827D7E),
-                          fontWeight: FontWeight.w400,
-                          fontSize: Get.width * .046),
-                    ),
-                    SizedBox(
-                      height: Get.width * .11,
-                    ),
-                    Container(decoration: BoxDecoration(
-        color: Colors.white, // Change this to the desired background color
-        borderRadius: BorderRadius.circular(30.0),),child: emailField()),
-                    SizedBox(
-                      height: Get.width * .05,
-                    ),
-                    passField(),
-                    SizedBox(
-                      height: Get.width * .04,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: Get.width * .045,
-                        ),
-                        Checkbox(
-                          value: _bool,
-                          checkColor: Colors.black,
-                          activeColor: Color(0xFFFFFFFF),
-                          onChanged: (value) {
-                            _bool = !_bool;
-                            setState(() {});
-                          },
-                        ),
-                        Text(
-                          "Remember me",
-                          style: TextStyle(
-                              color: Color(0xFF000000).withOpacity(.60),
-                              fontSize: Get.width * .034),
-                        ),
-                        SizedBox(
-                          width: Get.width * .15,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Get.to(Change_Password());
-                          },
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(
-                                color: Color(0xFFE77811),
-                                fontSize: Get.width * .035),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: Get.width * .2,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                            child: Padding(
-                                padding: EdgeInsets.fromLTRB(
-                                    Get.width * .08, 0, Get.width * .02, 0),
-                                child: Divider(thickness: 2,color: Color(0xFF827D7E).withOpacity(.60)))),
-                        Text(
-                          "OR",
-                          style: TextStyle(
-                              fontSize: Get.width * .045,
-                              color: Color(0xFF000000).withOpacity(.60)),
-                        ),
-                        Expanded(
-                            child: Padding(
-                          padding: EdgeInsets.fromLTRB(
-                              Get.width * .02, 0, Get.width * .08, 0),
-                          child: Divider(thickness: 2,color: Color(0xFF827D7E).withOpacity(.60),),
-                        )),
-                      ],
-                    ),
-                    SizedBox(height: Get.width * .13),
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: Get.width * .08),
-                      child: InkWell(
-                        onTap: () {
-                          Get.to(Otp_Screen());
-                        },
-                        child: Container(
-                          width: double.infinity,
-                          height: Get.width * .12,
-                          decoration: BoxDecoration(
-                              color: Color(0xFFE77811),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Center(
-                            child: Text(
-                              "Log in",
-                              style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: Get.width * .05),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: Get.width * .04,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("New Member?",
-                            style: TextStyle(
-                                color: Color(0xFF827D7E),
-                                fontWeight: FontWeight.w500,
-                                fontSize: Get.width * .04)),
-                        InkWell(
-                          onTap: () {
-                            Get.to(Register_Now());
-                          },
-                          child: Text(
-                            "Register Now",
-                            style: TextStyle(
-                                color: Color(0xFFE77811),
-                                fontWeight: FontWeight.w500,
-                                fontSize: Get.width * .04),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+              Container(
+                width: Get.width * 0.7,
+                child: Image.asset(
+                  "assets/logo.png",
+                  fit: BoxFit.fill,
                 ),
               ),
-            )
-          ],
+              SizedBox(
+                height: Get.width * .05,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/bg.png'),
+                            fit: BoxFit.cover),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(32),
+                          topRight: Radius.circular(32),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              spreadRadius: 1,
+                              blurRadius: 10,
+                              color: Color.fromARGB(255, 159, 159, 159)),
+                        ]),
+                    child: Form(
+                      key: _formkey,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: Get.width * .15,
+                          ),
+                          Text(
+                            "Wellcome Back",
+                            style: TextStyle(
+                                color: Color(0xFF827D7E),
+                                fontWeight: FontWeight.w600,
+                                fontSize: Get.width * .073),
+                          ),
+                          Text(
+                            "sign in to access your account",
+                            style: TextStyle(
+                                color: Color(0xFF827D7E),
+                                fontWeight: FontWeight.w400,
+                                fontSize: Get.width * .046),
+                          ),
+                          SizedBox(
+                            height: Get.width * .11,
+                          ),
+                          emailField(),
+                          SizedBox(
+                            height: Get.width * .05,
+                          ),
+                          passField(),
+                          SizedBox(
+                            height: Get.width * .04,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: Get.width * .045,
+                              ),
+                              Checkbox(
+                                value: _bool,
+                                checkColor: Colors.black,
+                                activeColor: Color(0xFFFFFFFF),
+                                onChanged: (value) {
+                                  _bool = !_bool;
+                                  setState(() {});
+                                },
+                              ),
+                              Text(
+                                "Remember me",
+                                style: TextStyle(
+                                    color: Color(0xFF000000).withOpacity(.60),
+                                    fontSize: Get.width * .034),
+                              ),
+                              SizedBox(
+                                width: Get.width * .15,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Get.to(Change_Password());
+                                },
+                                child: Text(
+                                  "Forgot Password?",
+                                  style: TextStyle(
+                                      color: Color(0xFFE77811),
+                                      fontSize: Get.width * .035),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: Get.width * .2,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: Padding(
+                                      padding: EdgeInsets.fromLTRB(
+                                          Get.width * .08,
+                                          0,
+                                          Get.width * .02,
+                                          0),
+                                      child: Divider(
+                                          thickness: 2,
+                                          color: Color(0xFF827D7E)
+                                              .withOpacity(.60)))),
+                              Text(
+                                "OR",
+                                style: TextStyle(
+                                    fontSize: Get.width * .045,
+                                    color: Color(0xFF000000).withOpacity(.60)),
+                              ),
+                              Expanded(
+                                  child: Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    Get.width * .02, 0, Get.width * .08, 0),
+                                child: Divider(
+                                  thickness: 2,
+                                  color: Color(0xFF827D7E).withOpacity(.60),
+                                ),
+                              )),
+                            ],
+                          ),
+                          SizedBox(height: Get.width * .13),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: Get.width * .08),
+                            child: InkWell(
+                              onTap: () {
+                                if (_formkey.currentState!.validate()) {
+                                  String __email = _emailcontroler.text;
+                                  String __pass = _passwordcontroler.text;
+
+                                  int _status = _sendDataToAPI(__email, __pass);
+                                  if (_status == 200) {
+                                    Get.to(Otp_Screen());
+                                  }
+                                }
+                              },
+                              child: Container(
+                                width: double.infinity,
+                                height: Get.width * .12,
+                                decoration: BoxDecoration(
+                                    color: Color(0xFFE77811),
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Center(
+                                  child: Text(
+                                    "Log in",
+                                    style: TextStyle(
+                                        color: Color(0xFFFFFFFF),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: Get.width * .05),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: Get.width * .04,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("New Member?",
+                                  style: TextStyle(
+                                      color: Color(0xFF827D7E),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: Get.width * .04)),
+                              InkWell(
+                                onTap: () {
+                                  Get.to(Register_Now());
+                                },
+                                child: Text(
+                                  "Register Now",
+                                  style: TextStyle(
+                                      color: Color(0xFFE77811),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: Get.width * .04),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -211,26 +259,37 @@ class _Signin_ScreenState extends State<Signin_Screen> {
   Padding passField() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Get.width * .08),
-      child: Container(decoration: BoxDecoration(
-        color: Colors.white, // Change this to the desired background color
-        borderRadius: BorderRadius.circular(30.0),),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, // Change this to the desired background color
+          borderRadius: BorderRadius.circular(30.0),
+        ),
         child: TextFormField(
-            decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(color: Colors.black12)),
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(color: Colors.grey)),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                hintText: "Password",
-                hintStyle:
-                    TextStyle(color: Colors.black26, fontSize: Get.width * .035),
-                suffixIcon: Icon(
-                  Icons.lock_outline,
-                  color: Colors.black26,
-                ))),
+          decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(color: Colors.black12)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(color: Colors.grey)),
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              hintText: "Password",
+              hintStyle:
+                  TextStyle(color: Colors.black26, fontSize: Get.width * .035),
+              suffixIcon: Icon(
+                Icons.lock_outline,
+                color: Colors.black26,
+              )),
+          controller: _passwordcontroler,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return "enter your password";
+            } else if (value.length < 6) {
+              return 'Password must be at least 6 characters';
+            }
+          },
+        ),
       ),
     );
   }
@@ -238,26 +297,39 @@ class _Signin_ScreenState extends State<Signin_Screen> {
   Padding emailField() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Get.width * .08),
-      child: Container(decoration: BoxDecoration(
-        color: Colors.white, // Change this to the desired background color
-        borderRadius: BorderRadius.circular(30.0),),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, // Change this to the desired background color
+          borderRadius: BorderRadius.circular(30.0),
+        ),
         child: TextFormField(
-            decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(color: Colors.black12)),
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(color: Colors.grey)),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                hintText: "Enter your Email",
-                hintStyle:
-                    TextStyle(color: Colors.black26, fontSize: Get.width * .035),
-                suffixIcon: Icon(
-                  Icons.mail_outlined,
-                  color: Colors.black26,
-                ))),
+          decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(color: Colors.black12)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(color: Colors.grey)),
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              hintText: "Enter your Email",
+              hintStyle:
+                  TextStyle(color: Colors.black26, fontSize: Get.width * .035),
+              suffixIcon: Icon(
+                Icons.mail_outlined,
+                color: Colors.black26,
+              )),
+          controller: _emailcontroler,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return "enter your email";
+            } else if (!RegExp(
+                    r"^[a-zA-Z0-9.a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                .hasMatch(value)) {
+              return "enter a valid email";
+            }
+          },
+        ),
       ),
     );
   }
